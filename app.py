@@ -5,8 +5,8 @@ import os
 import logging
 import tornado.web
 import tornado.options
-from Handlers.FakeAPIHandler import FakeAPIHandler
-from Handlers.MainHandler import MainHandler
+from handlers.FakeAPIHandler import FakeAPIHandler
+from handlers.MainHandler import MainHandler
 from tools import server
 
 abspath = os.path.abspath(__file__)
