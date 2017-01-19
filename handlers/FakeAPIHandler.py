@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 
 import logging
-import tornado.web
+from tornado import web
 
 logger = logging.getLogger(__name__)
 
 
-class FakeAPIHandler(tornado.web.RequestHandler):
+class FakeAPIHandler(web.RequestHandler):
 
     def get(self, path_request):
         if path_request == '' or path_request == '/':

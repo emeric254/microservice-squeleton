@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 
 import logging
-import tornado.web
+from tornado import web
 
 logger = logging.getLogger(__name__)
 
 
-class MainHandler(tornado.web.RequestHandler):
+class MainHandler(web.RequestHandler):
     """Handle '/' endpoint (root server endpoint).
     """
 
