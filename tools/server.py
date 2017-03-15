@@ -20,9 +20,9 @@ def start_http(app: web.Application, http_port: int = 80):
     except AttributeError:  # OS without fork() support ...
         logger.warning('Can\' fork, continuing with only one (the main) thread ...')
         pass  # do nothing and continue without multi-threading
-    logger.info('Start an HTTP request handler on port : ' + str(http_port))
-    httpserver.HTTPServer(app).add_sockets(http_socket)  # bind http port
     try:  # try to stay forever alive to satisfy user's requests, except KeyboardInterrupt to "properly" exit
+        logger.info('Start an HTTP request handler on port : ' + str(http_port))
+        httpserver.HTTPServer(app).add_sockets(http_socket)  # bind http port
         ioloop.IOLoop.current().start()
     except KeyboardInterrupt:
         ioloop.IOLoop.current().stop()
