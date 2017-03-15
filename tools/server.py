@@ -22,8 +22,11 @@ def start_http(app: web.Application, http_port: int = 80):
         logger.warning('Can\' fork, continuing with only one (the main) thread ...')
         pass  # do nothing and continue without multi-threading
     logger.info('Start an HTTP request handler on port : ' + str(http_port))
-    httpserver.HTTPServer(app).add_sockets(http_socket)  # bind http port
+    server = httpserver.HTTPServer(app)
+    server.add_sockets(http_socket)  # bind http port
     try:  # try to stay forever alive to satisfy user's requests, except KeyboardInterrupt to "properly" exit
         ioloop.IOLoop.current().start()
     except KeyboardInterrupt:
+        server.close_all_connections()
+        server.stop()
         ioloop.IOLoop.current().stop()
