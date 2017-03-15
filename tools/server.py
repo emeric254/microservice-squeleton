@@ -17,6 +17,7 @@ def start_http(app: web.Application, http_port: int = 80):
         process.fork_processes(0)  # fork
     except KeyboardInterrupt:  # except KeyboardInterrupt to "properly" exit
         ioloop.IOLoop.current().stop()
+        exit(0)
     except AttributeError:  # OS without fork() support ...
         logger.warning('Can\' fork, continuing with only one (the main) thread ...')
         pass  # do nothing and continue without multi-threading
