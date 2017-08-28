@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,8 +8,10 @@
     </head>
     <body>
         <h1>Micro-Service Squeleton</h1>
-        <p>Acces the API with the endpoint <a href="/api">/api</a></p>
-        <p>The provided API is a simple echo of what you provide in the URI</p>
-        <p>Exemple : <a href="/api/hello">/api/hello</a> will return the word "hello"</p>
+        <h2>Hello endpoint</h2>
+        <p><a href="/api/hello">/api/hello</a> will return "Hello !"</p>
+        <h2>Echo endpoint</h2>
+        <p><a href="/api/echo">/api/echo</a> will return an echo of what URI you provide</p>
+        <p>Example <a href="/api/echo/123">/api/echo/123</a> will return "123"</p>
     </body>
 </html>

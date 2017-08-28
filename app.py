@@ -4,7 +4,7 @@
 import os
 import logging
 from tornado import web, options
-from handlers import FakeAPIHandler, MainHandler
+from handlers import HelloAPIHandler, EchoAPIHandler, MainHandler
 from tools import server
 
 abspath = os.path.abspath(__file__)
@@ -30,7 +30,8 @@ def main():
     logger.debug('app settings defined')
     application = web.Application([
             (r'/', MainHandler),  # index.html
-            (r'/api(.*)$', FakeAPIHandler),
+            (r'/api/hello', HelloAPIHandler),
+            (r'/api/echo(.*)$', EchoAPIHandler),
         ], **settings)
     logger.debug('tornado web application created')
     logger.info('tornado web application will be launched on port : ' + str(options.options.port))

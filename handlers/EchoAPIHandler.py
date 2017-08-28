@@ -6,7 +6,7 @@ from tornado import web
 logger = logging.getLogger(__name__)
 
 
-class FakeAPIHandler(web.RequestHandler):
+class EchoAPIHandler(web.RequestHandler):
 
     def get(self, path_request):
         if path_request == '' or path_request == '/':
