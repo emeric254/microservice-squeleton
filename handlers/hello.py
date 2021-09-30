@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 
 import logging
-from tornado import web
+from handlers.base import BaseHandler
 
 logger = logging.getLogger(__name__)
 
 
-class HelloAPIHandler(web.RequestHandler):
+class HelloAPIHandler(BaseHandler):
 
     def get(self):
         self.write('Hello !')

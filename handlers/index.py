@@ -1,18 +1,17 @@
 # -*- coding: utf-8 -*-
 
 import logging
-from tornado import web
+from handlers.base import BaseHandler
 
 logger = logging.getLogger(__name__)
 
 
-class MainHandler(web.RequestHandler):
+class MainHandler(BaseHandler):
     """Handle '/' endpoint (root server endpoint).
     """
 
     def get(self):
         """Handle GET requests. Serve the index web page.
         """
-        logger.debug('render index.html file')
+        logger.debug('rendering index.html file')
         self.render('index.html')
-        return

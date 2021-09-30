@@ -12,7 +12,7 @@ setup(
     package_dir={},
     url='https://github.com/emeric254/microservice-squeleton',
     license='MIT License',
-    author='Tosi Émeric',
+    author='Émeric TOSI',
     author_email='emeric254@users.noreply.github.com',
     description='Micro-Service Squeleton'
 )
